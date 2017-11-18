@@ -30,7 +30,7 @@ public class LoginPageBL {
     }
 
     public CatalogPageBL registerApp(){
-        int code = gmailPage.getEmailWithCode().getSecretCode();
+        int code = gmailPage.getCodeEmail().getSecretCode();
         secretCodePage.getInputSecretCode().type(String.valueOf(code));
         secretCodePage.getButtonSectetCode().click();
 
@@ -39,7 +39,6 @@ public class LoginPageBL {
 
     public LoginPageBL logoutApp(){
         downBar.getBackground().click();
-
         return this;
     }
 }

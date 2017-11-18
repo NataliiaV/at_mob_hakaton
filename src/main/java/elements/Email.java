@@ -11,14 +11,8 @@ import static com.epam.at.utils.driver.DriverRepository.getAndroidDriver;
 
 public class Email extends Element {
 
-    private Pattern pattern = Pattern.compile("-?\\d{9}");
-
     public Email(WebElement element) {
         super(element);
-    }
-
-    public int getSecretCode(){
-        return Integer.parseInt(pattern.matcher(element.getAttribute("contentDescription")).group(1));
     }
 
     @Override

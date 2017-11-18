@@ -2,12 +2,12 @@ package com.epam.at.tests;
 
 import com.epam.at.businesslogic.LoginPageBL;
 import com.epam.at.businesslogic.ProductPageBL;
-import com.epam.at.utils.driver.ConstantUtils;
+import com.epam.at.utils.ConstantUtil;
 import junit.framework.Assert;
 import org.testng.annotations.Test;
 
-import static com.epam.at.utils.driver.ConstantUtils.EMAIL_REGISTERED;
-import static com.epam.at.utils.driver.ConstantUtils.PASSWORD_REGISTERED;
+import static com.epam.at.utils.ConstantUtil.EMAIL_REGISTERED;
+import static com.epam.at.utils.ConstantUtil.PASSWORD_REGISTERED;
 
 public class TestProductLike extends TestBase {
 
@@ -18,8 +18,8 @@ public class TestProductLike extends TestBase {
     public void addLikeToProduct() {
         ProductPageBL addLikeProduct = login.loginApp(EMAIL_REGISTERED, PASSWORD_REGISTERED)
                 .goToProduct()
-                .addLike(ConstantUtils.MAX_LIKES_NUMBER);
+                .addLike(ConstantUtil.MAX_LIKES_NUMBER);
 
-        Assert.assertEquals(ConstantUtils.MAX_LIKES_NUMBER, addLikeProduct.getProductNumber());
+        Assert.assertEquals(ConstantUtil.MAX_LIKES_NUMBER, addLikeProduct.getProductNumber());
     }
 }

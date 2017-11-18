@@ -5,5 +5,6 @@ package com.epam.at.utils.driver;
  */
 public class ConstantUtils {
 
-    public static final String email = "shchuroleh@gmail.com";
+    public static final String email = "hackaton.epam.ta@gmail.com";
+    public static final String password = "21wqsaxz";
 }

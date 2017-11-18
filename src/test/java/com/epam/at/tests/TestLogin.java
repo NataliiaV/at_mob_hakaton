@@ -3,7 +3,8 @@ package com.epam.at.tests;
 import com.epam.at.businesslogic.LoginPageBL;
 import org.testng.annotations.Test;
 
-import static com.epam.at.utils.ConstantUtil.*;
+import static com.epam.at.utils.ConstantUtil.EMAIL_REGISTERED;
+import static com.epam.at.utils.ConstantUtil.PASSWORD_REGISTERED;
 
 public class TestLogin extends TestBase{
 

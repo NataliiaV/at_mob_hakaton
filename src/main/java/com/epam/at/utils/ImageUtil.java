@@ -1,9 +1,14 @@
 package com.epam.at.utils;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
+import com.epam.at.utils.driver.DriverRepository;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-public abstract class ImageComparator {
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+public abstract class ImageUtil {
 
     public static float getDifference(BufferedImage img1, BufferedImage img2){
         int width = img1.getWidth();
@@ -23,6 +28,12 @@ public abstract class ImageComparator {
 
         return 100f * diff / maxDiff;
     }
+
+    public static BufferedImage getScreenshot() throws IOException {
+        TakesScreenshot takesScreenshot = DriverRepository.getAndroidDriver();
+        return ImageIO.read(takesScreenshot.getScreenshotAs(OutputType.FILE));
+    }
+
 
     private static int pixelDiff(int rgb1, int rgb2) {
         int r1 = (rgb1 >> 16) & 0xff;

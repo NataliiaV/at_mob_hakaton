@@ -7,8 +7,8 @@ import com.epam.at.businesslogic.VideoPageBL;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.epam.at.utils.driver.ConstantUtils.EMAIL_REGISTERED;
-import static com.epam.at.utils.driver.ConstantUtils.PASSWORD_REGISTERED;
+import static com.epam.at.utils.ConstantUtil.EMAIL_REGISTERED;
+import static com.epam.at.utils.ConstantUtil.PASSWORD_REGISTERED;
 
 public class TestVideo extends TestBase {
     private LoginPageBL login = new LoginPageBL();

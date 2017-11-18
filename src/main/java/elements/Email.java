@@ -17,7 +17,7 @@ public class Email extends Element {
         super(element);
     }
 
-    int getSecretCode(){
+    public int getSecretCode(){
         return Integer.parseInt(pattern.matcher(element.getAttribute("contentDescription")).group(1));
     }
 

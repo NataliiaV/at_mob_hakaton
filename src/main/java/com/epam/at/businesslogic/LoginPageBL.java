@@ -1,10 +1,14 @@
 package com.epam.at.businesslogic;
 
+import com.epam.at.pageobjects.GmailPage;
 import com.epam.at.pageobjects.LoginPage;
+import com.epam.at.pageobjects.SecretCodePage;
 
 public class LoginPageBL {
 
     private LoginPage loginPage = new LoginPage();
+    private GmailPage gmailPage = new GmailPage();
+    private SecretCodePage secretCodePage = new SecretCodePage();
 
     public LoginPageBL loginApp (String mail, String password)
     {
@@ -16,7 +20,6 @@ public class LoginPageBL {
         return this;
     }
 
-
     public LoginPageBL loginApp (String mail)
     {
         loginApp (mail, "");
@@ -24,6 +27,13 @@ public class LoginPageBL {
     }
 
     public LoginPageBL registerApp(){
+        int code = gmailPage.getEmailWithCode().getSecretCode();
+        secretCodePage.getInputSecretCode().type(String.valueOf(code));
+        secretCodePage.getButtonSectetCode().click();
+        return this;
+    }
+
+    public LoginPageBL logoutApp(){
 
         return this;
     }

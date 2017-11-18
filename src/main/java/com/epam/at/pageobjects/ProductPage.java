@@ -53,6 +53,8 @@ public class ProductPage {
     }
 
     public Button getButtonPayNow() {
+        //TODO: need to rewrite this logic :)
+        DriverRepository.getAndroidDriver().swipe(961, 1097, 927, 363, 328);
         return new Button(payNow);
     }
 

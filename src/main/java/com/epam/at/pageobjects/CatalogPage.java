@@ -1,10 +1,12 @@
 package com.epam.at.pageobjects;
 
 import com.epam.at.utils.driver.DriverRepository;
-import elements.Input;
+import elements.Button;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+
 
 public class CatalogPage {
 
@@ -20,20 +22,20 @@ public class CatalogPage {
     @FindBy(id = "bsk_image_fourth")
     private WebElement fourthImage;
 
-    public Input getFirstImage(){
-        return new Input(firstImage);
+    public Button getFirstImage(){
+        return new Button(firstImage);
     }
 
-    public Input getSecondImage(){
-        return new Input(secondImage);
+    public Button getSecondImage(){
+        return new Button(secondImage);
     }
 
-    public Input getThirdImage(){
-        return new Input(thirdImage);
+    public Button getThirdImage(){
+        return new Button(thirdImage);
     }
 
-    public Input getFourthImage(){
-        return new Input(fourthImage);
+    public Button getFourthImage(){
+        return new Button(fourthImage);
     }
 
     public CatalogPage() {

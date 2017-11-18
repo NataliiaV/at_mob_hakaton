@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.regex.Pattern;
-
 import static com.epam.at.utils.driver.DriverRepository.getAndroidDriver;
 
 public class Email extends Element {

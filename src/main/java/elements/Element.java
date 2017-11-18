@@ -4,8 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 import static com.epam.at.utils.driver.DriverRepository.getAndroidDriver;
 
 public abstract class Element {

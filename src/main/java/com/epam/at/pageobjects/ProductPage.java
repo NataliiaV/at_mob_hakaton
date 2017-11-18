@@ -29,6 +29,9 @@ public class ProductPage {
     @FindBy(id = "contactUs")
     private WebElement contactUs;
 
+    @FindBy(id = "error_count")
+    private WebElement errorMessage;
+
     public Button getButtonStartMovie() {
         return new Button(buttonCart);
     }
@@ -49,7 +52,6 @@ public class ProductPage {
         return new Input(cartQuantity);
     }
 
-
     public Button getButtonPayNow() {
         return new Button(payNow);
     }
@@ -57,6 +59,8 @@ public class ProductPage {
     public Button getContactUs() {
         return new Button(contactUs);
     }
+
+    public Input getErrorMessage() { return new Input(errorMessage);}
 
     public ProductPage() {
         PageFactory.initElements(DriverRepository.getAndroidDriver(), this);

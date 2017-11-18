@@ -7,4 +7,5 @@ public class ConstantUtils {
 
     public static final String EMAIL_REGISTERED = "hackaton.epam.ta@gmail.com";
     public static final String PASSWORD_REGISTERED = "21wqsaxz";
+    public static final String EMAIL_NOT_REGISTERED = "myempire.ua@gmail.com";
 }

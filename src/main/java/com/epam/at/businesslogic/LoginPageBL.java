@@ -29,12 +29,12 @@ public class LoginPageBL {
         return this;
     }
 
-    public LoginPageBL registerApp(){
+    public CatalogPageBL registerApp(){
         int code = gmailPage.getEmailWithCode().getSecretCode();
         secretCodePage.getInputSecretCode().type(String.valueOf(code));
         secretCodePage.getButtonSectetCode().click();
 
-        return this;
+        return new CatalogPageBL();
     }
 
     public LoginPageBL logoutApp(){

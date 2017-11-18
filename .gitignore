@@ -1,3 +1,5 @@
 .idea/*
 at_mob_hakaton.iml
 target/*
+libs/*
+Log4jOutput.log

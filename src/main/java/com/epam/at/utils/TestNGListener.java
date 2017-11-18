@@ -14,19 +14,20 @@ import java.io.IOException;
 
 public class TestNGListener implements ITestListener {
 	private static final Logger LOG = Logger.getLogger(TestNGListener.class);
-	private final String ERROR_MESSAGE = "Test failure. Method name : %s";
 
 	public void onFinish(ITestContext result) {
+		LOG.info(PhonePerfCharacteristicsUtil.getMemoryInfoMap());
 	}
 
 	public void onStart(ITestContext result) {
+		LOG.info(PhonePerfCharacteristicsUtil.getMemoryInfoMap());
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 	}
 
 	public void onTestFailure(ITestResult result) {
-		LOG.error(String.format(ERROR_MESSAGE, result.getName()));
+		LOG.error(String.format("Test failure. Method name : %s", result.getName()));
 		LOG.error("Test failure. Error : " + result.getThrowable().getMessage());
 
 		TakesScreenshot takesScreenshot = DriverRepository.getAndroidDriver();

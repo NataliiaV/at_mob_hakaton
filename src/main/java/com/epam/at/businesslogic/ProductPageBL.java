@@ -34,4 +34,7 @@ public class ProductPageBL extends BaseLogic {
 
         return this;
     }
+    public String getErrorMessage() {
+        return productPage.getErrorMessage().getText();
+    }
 }

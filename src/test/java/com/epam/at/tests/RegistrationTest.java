@@ -3,7 +3,7 @@ package com.epam.at.tests;
 import com.epam.at.businesslogic.LoginPageBL;
 import org.testng.annotations.Test;
 
-import static com.epam.at.utils.driver.ConstantUtils.*;
+import static com.epam.at.utils.ConstantUtil.*;
 
 public class RegistrationTest extends TestBase {
 

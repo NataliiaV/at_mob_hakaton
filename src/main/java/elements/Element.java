@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+import static com.epam.at.utils.driver.DriverRepository.getAndroidDriver;
+
 public abstract class Element {
 
     protected WebElement element;
@@ -19,8 +21,7 @@ public abstract class Element {
     }
 
     public void waitForVisibility(int ms){
-        new WebDriverWait(driver, 60).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='navigationBarBackground']")));
-
+        new WebDriverWait(getAndroidDriver(), ms/1000).until(ExpectedConditions.presenceOfElementLocated(By.id(getAttribute("id"))));
     }
 
    public String getTagName() {

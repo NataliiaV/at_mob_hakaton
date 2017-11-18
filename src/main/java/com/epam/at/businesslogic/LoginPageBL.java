@@ -12,14 +12,14 @@ public class LoginPageBL {
     private SecretCodePage secretCodePage = new SecretCodePage();
     private DownBar downBar = new DownBar();
 
-    public LoginPageBL loginApp (String mail, String password)
+    public CatalogPageBL loginApp (String mail, String password)
     {
         loginPage.getInputEmail().type(mail);
         loginPage.getInputPassword().type(password);
         loginPage.getButtonLogin().waitForVisibility(2000);
         loginPage.getButtonLogin().click();
 
-        return this;
+        return new CatalogPageBL();
     }
 
     public LoginPageBL loginApp (String mail)

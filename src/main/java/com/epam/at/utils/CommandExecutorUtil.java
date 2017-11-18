@@ -1,9 +1,14 @@
 package com.epam.at.utils;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class CommandExecutorUtil {
+
+    protected static final Logger LOG = Logger.getLogger(CommandExecutorUtil.class);
+
     public static String executeCommand(String command) {
         StringBuilder output = new StringBuilder();
         try {
@@ -14,7 +19,7 @@ public class CommandExecutorUtil {
                 output.append(line).append("\n");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.warn(e.getMessage());
         }
         return output.toString();
     }

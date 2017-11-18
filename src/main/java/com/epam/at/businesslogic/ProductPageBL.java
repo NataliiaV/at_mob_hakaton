@@ -23,4 +23,9 @@ public class ProductPageBL {
 
         return this;
     }
+
+    public int getProductNumber(){
+        String productNumber = productPage.getCartQuantity().getText();
+        return Integer.parseInt(productNumber);
+    }
 }

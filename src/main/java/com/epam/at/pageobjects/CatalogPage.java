@@ -8,16 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CatalogPage {
 
-    @FindBy(id = "bsk_image_first")
+    @FindBy(id = "bsk_img_first")
     private WebElement firstImage;
 
-    @FindBy(id = "bsk_image_second")
+    @FindBy(id = "bsk_img_second")
     private WebElement secondImage;
 
-    @FindBy(id = "bsk_image_third")
+    @FindBy(id = "bsk_img_third")
     private WebElement thirdImage;
 
-    @FindBy(id = "bsk_image_fourth")
+    @FindBy(id = "bsk_img_fourth")
     private WebElement fourthImage;
 
     public Button getFirstImage() {

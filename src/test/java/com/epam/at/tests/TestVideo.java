@@ -1,10 +1,10 @@
 package com.epam.at.tests;
 
+import com.epam.at.assertion.VideoAssertions;
 import com.epam.at.businesslogic.CatalogPageBL;
 import com.epam.at.businesslogic.LoginPageBL;
 import com.epam.at.businesslogic.ProductPageBL;
 import com.epam.at.businesslogic.VideoPageBL;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.epam.at.utils.ConstantUtil.EMAIL_REGISTERED;
@@ -21,6 +21,6 @@ public class TestVideo extends TestBase {
         login.loginApp(EMAIL_REGISTERED, PASSWORD_REGISTERED);
         catalog.goToProduct();
         productPageBL.playVideo();
-        Assert.assertTrue(video.videoIsPlayed(), "Video should play when click start video!");
+        VideoAssertions.assertVieoIsPlayed(video);
     }
 }

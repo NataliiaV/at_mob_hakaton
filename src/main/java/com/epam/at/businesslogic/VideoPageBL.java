@@ -13,15 +13,17 @@ public class VideoPageBL {
     }
 
     public boolean videoIsPlayed() {
+        if (!videoPage.getMainFrame().isDisplayed())
+            clickOnScringDuringVideo();
         boolean isPlayed = false;
         if (videoPage.getButtonStopReplay().isDisplayed())
-            isPlayed = true;
+            return true;
         if (videoPage.getTimeBar().isDisplayed())
-            isPlayed = true;
+            return true;
         if (videoPage.getTitle().isDisplayed())
-            isPlayed = true;
+            return true;
         if (videoPage.getMenu().isDisplayed())
-            isPlayed = true;
+            return true;
         return isPlayed;
     }
 }

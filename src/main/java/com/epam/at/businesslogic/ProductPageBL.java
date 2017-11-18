@@ -28,4 +28,10 @@ public class ProductPageBL extends BaseLogic {
         String productNumber = productPage.getCartQuantity().getText();
         return Integer.parseInt(productNumber);
     }
+
+    public ProductPageBL playVideo() {
+        productPage.getButtonStartMovie().click();
+
+        return this;
+    }
 }

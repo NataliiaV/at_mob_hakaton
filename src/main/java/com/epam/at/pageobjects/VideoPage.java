@@ -15,7 +15,7 @@ public class VideoPage {
     private WebElement title;
     @FindBy(id="player_overflow_button")
     private WebElement menu;
-    @FindBy(className = "android.widget.FrameLayout")
+    @FindBy(xpath = "//*[@class='android.widget.FrameLayout' and ./parent::*[@class='android.view.ViewGroup']]")//
     private WebElement mainFrame;
 
     public Button getButtonStopReplay() {

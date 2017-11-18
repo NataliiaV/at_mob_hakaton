@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
-
 public class CatalogPage {
 
     @FindBy(id = "bsk_image_first")
@@ -22,19 +20,19 @@ public class CatalogPage {
     @FindBy(id = "bsk_image_fourth")
     private WebElement fourthImage;
 
-    public Button getFirstImage(){
+    public Button getFirstImage() {
         return new Button(firstImage);
     }
 
-    public Button getSecondImage(){
+    public Button getSecondImage() {
         return new Button(secondImage);
     }
 
-    public Button getThirdImage(){
+    public Button getThirdImage() {
         return new Button(thirdImage);
     }
 
-    public Button getFourthImage(){
+    public Button getFourthImage() {
         return new Button(fourthImage);
     }
 

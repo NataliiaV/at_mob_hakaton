@@ -11,7 +11,7 @@ public class GmailPage {
     @FindBy(xpath = "contains(@contentDescription, 'Take care of this number:')")
     WebElement emailWithCode;
 
-    public Email getEmailWithCode(){
+    public Email getEmailWithCode() {
         return new Email(emailWithCode);
     }
 

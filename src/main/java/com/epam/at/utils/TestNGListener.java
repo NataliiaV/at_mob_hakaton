@@ -13,45 +13,45 @@ import java.io.File;
 import java.io.IOException;
 
 public class TestNGListener implements ITestListener {
-	private static final Logger LOG = Logger.getLogger(TestNGListener.class);
+    private static final Logger LOG = Logger.getLogger(TestNGListener.class);
+    private PhonePerfCharacteristicsUtil perfInfo = new PhonePerfCharacteristicsUtil();
 
-	public void onFinish(ITestContext result) {
-		LOG.info(PhonePerfCharacteristicsUtil.getMemoryInfoMap());
-	}
+    public void onFinish(ITestContext result) {
+    }
 
-	public void onStart(ITestContext result) {
-		LOG.info(PhonePerfCharacteristicsUtil.getMemoryInfoMap());
-	}
+    public void onStart(ITestContext result) {
+    }
 
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-	}
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+    }
 
-	public void onTestFailure(ITestResult result) {
-		LOG.error(String.format("Test failure. Method name : %s", result.getName()));
-		LOG.error("Test failure. Error : " + result.getThrowable().getMessage());
+    public void onTestFailure(ITestResult result) {
+        LOG.error(String.format("Test failure. Method name : %s", result.getName()));
+        LOG.error("Test failure. Error : " + result.getThrowable().getMessage());
+        perfInfo.logAllInfo(LOG);
 
-		TakesScreenshot takesScreenshot = DriverRepository.getAndroidDriver();
-		File screen = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		String screenPath = "target/surefire-reports/screens/screen" + System.currentTimeMillis() + ".png";
-		try {
-		    File newFile =  new File(screenPath);
-			FileUtils.copyFile(screen, newFile);
-			LOG.error("Screenshot path:" + newFile.getAbsolutePath());
-		} catch (IOException e) {
-			LOG.error("Error while saving screenshot.");
-		}
-	}
+        TakesScreenshot takesScreenshot = DriverRepository.getAndroidDriver();
+        File screen = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        String screenPath = "target/surefire-reports/screens/screen" + System.currentTimeMillis() + ".png";
+        try {
+            File newFile = new File(screenPath);
+            FileUtils.copyFile(screen, newFile);
+            LOG.error("Screenshot path:" + newFile.getAbsolutePath());
+        } catch (IOException e) {
+            LOG.error("Error while saving screenshot.");
+        }
+    }
 
-	public void onTestSkipped(ITestResult result) {
-		LOG.debug("Test skipped. Method name : " + result.getName());
-	}
+    public void onTestSkipped(ITestResult result) {
+        LOG.debug("Test skipped. Method name : " + result.getName());
+    }
 
-	public void onTestStart(ITestResult result) {
-		LOG.debug("Test started. Test name : " + result.getName());
-	}
+    public void onTestStart(ITestResult result) {
+        LOG.debug("Test started. Test name : " + result.getName());
+    }
 
-	public void onTestSuccess(ITestResult result) {
-		LOG.debug("Test succeed. Method name : " + result.getName());
-	}
+    public void onTestSuccess(ITestResult result) {
+        LOG.debug("Test succeed. Method name : " + result.getName());
+    }
 
 }

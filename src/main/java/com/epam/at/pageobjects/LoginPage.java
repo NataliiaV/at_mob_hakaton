@@ -1,6 +1,8 @@
 package com.epam.at.pageobjects;
 
 import com.epam.at.utils.driver.DriverRepository;
+import elements.Button;
+import elements.Input;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,18 +18,18 @@ public class LoginPage {
     private WebElement inputPassword;
 
     @FindBy(id = "email_sign_in_button")
-    private WebElement loginButton;
+    private WebElement buttonLogin;
 
-    public WebElement getInputEmail(){
-        return inputEmail;
+    public Input getInputEmail(){
+        return new Input(inputEmail);
     }
 
-    public WebElement getInputPassword(){
-        return inputPassword;
+    public Input getInputPassword(){
+        return new Input(inputPassword);
     }
 
-    public WebElement getLoginButton(){
-        return loginButton;
+    public Button getButtonLogin(){
+        return new Button(buttonLogin);
     }
 
     public LoginPage() {

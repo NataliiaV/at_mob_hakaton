@@ -1,12 +1,10 @@
 package com.epam.at.tests;
 
+import com.epam.at.businesslogic.BaseLogic;
 import com.epam.at.utils.PhonePerfCharacteristicsUtil;
 import com.epam.at.utils.driver.DriverRepository;
 import org.apache.log4j.Logger;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 public class TestBase {
     protected final Logger LOG = Logger.getLogger(TestBase.class);
@@ -17,19 +15,19 @@ public class TestBase {
         perfInfo.logAllInfo(LOG);
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void startApp() {
-        DriverRepository.getAndroidDriver();
+        DriverRepository.getAndroidDriver().launchApp();
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
-        if (DriverRepository.getAndroidDriver() != null)
-            DriverRepository.getAndroidDriver().quit();
+        DriverRepository.getAndroidDriver().closeApp();
     }
 
     @AfterSuite
     public void logPerfInfoAfterAllTest() {
         perfInfo.logAllInfo(LOG);
+        DriverRepository.getAndroidDriver().quit();
     }
 }

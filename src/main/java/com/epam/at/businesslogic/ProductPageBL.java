@@ -36,8 +36,15 @@ public class ProductPageBL extends BaseLogic {
         videoPage.getTimeBar().waitForVisibility(5000);
         return this;
     }
-    
+
     public String getErrorMessage() {
         return productPage.getErrorMessage().getText();
+    }
+
+    public CatalogPageBL payProduct() {
+        productPage.getButtonPayNow().waitForVisibility(2000);
+        productPage.getButtonPayNow().click();
+
+        return new CatalogPageBL();
     }
 }

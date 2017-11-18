@@ -17,8 +17,6 @@ public enum DriversEnum {
         @Override
         protected AndroidDriver<AndroidElement> getDriver() throws MalformedURLException {
             DesiredCapabilities dc = new DesiredCapabilities();
-            dc.setCapability("reportDirectory", "reports");
-            dc.setCapability("reportFormat", "xml");
             dc.setCapability(MobileCapabilityType.UDID, "emulator-5554");
             dc.setCapability(MobileCapabilityType.APP, new File(RELATIVE_APP_PATH).getAbsolutePath());
             dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.hackaton.epam.tahackaton");

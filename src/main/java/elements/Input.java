@@ -7,7 +7,7 @@ public class Input extends Element {
         super(element);
     }
 
-    void type(CharSequence... charSequences){
+    public void type(CharSequence... charSequences){
         element.sendKeys(charSequences);
     }
 

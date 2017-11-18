@@ -6,19 +6,19 @@ public class ProductPageBL extends BaseLogic {
 
     private ProductPage productPage = new ProductPage();
 
-    public ProductPageBL addLike(int likesNumber) {
-        while (likesNumber != 0) {
+    public ProductPageBL addProduct(int productNumber) {
+        while (productNumber != 0) {
             productPage.getButtonCartPlus().click();
-            likesNumber--;
+            productNumber--;
         }
 
         return this;
     }
 
-    public ProductPageBL removeLike(int likesNumber) {
-        while (likesNumber != 0) {
+    public ProductPageBL removeProduct(int productNumber) {
+        while (productNumber != 0) {
             productPage.getButtonCartMinus().click();
-            likesNumber--;
+            productNumber--;
         }
 
         return this;

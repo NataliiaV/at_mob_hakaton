@@ -1,6 +1,6 @@
 package com.epam.at.tests;
 
-import com.epam.at.assertion.ProductLikeAssertion;
+import com.epam.at.assertion.ProductAssertion;
 import com.epam.at.businesslogic.LoginPageBL;
 import com.epam.at.businesslogic.ProductPageBL;
 import org.testng.annotations.Test;
@@ -12,20 +12,20 @@ public class TestProductLike extends TestBase {
     private LoginPageBL login = new LoginPageBL();
 
     @Test
-    public void addLikeToProduct() {
+    public void addProductToCart() {
         ProductPageBL addLikeProduct = login.loginApp(EMAIL_REGISTERED, PASSWORD_REGISTERED)
                 .goToProduct()
-                .addLike(MAX_LIKES_NUMBER);
+                .addProduct(MAX_PRODUCT_NUMBER);
 
-        ProductLikeAssertion.verifyMaxLikeNumber(addLikeProduct);
+        ProductAssertion.verifyMaxProductNumber(addLikeProduct);
     }
 
     @Test
-    public void removeLikeFromProduct() {
+    public void removeProductFormCart() {
         ProductPageBL removeLikeProduct = login.loginApp(EMAIL_REGISTERED, PASSWORD_REGISTERED)
                 .goToProduct()
-                .removeLike(MIN_LIKES_NUMBER);
+                .removeProduct(MIN_PRODUCT_NUMBER);
 
-        ProductLikeAssertion.verifyMinLikeNumber(removeLikeProduct);
+        ProductAssertion.verifyMinProductNumber(removeLikeProduct);
     }
 }

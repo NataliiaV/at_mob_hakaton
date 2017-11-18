@@ -10,7 +10,7 @@ public class TestLogin extends TestBase{
     private LoginPageBL login = new LoginPageBL();
 
     @Test
-    public void Login(){
+    public void login(){
         login.loginApp(EMAIL_REGISTERED, PASSWORD_REGISTERED)
              .logoutApp();
     }

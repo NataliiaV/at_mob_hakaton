@@ -38,9 +38,9 @@ public class TestVideo extends TestBase {
         catalog.goToProduct();
         productPageBL.playVideo();
 
-        BufferedImage img1 = ImageIO.read(DriverRepository.getScreenshotFile());
+        BufferedImage img1 = ImageUtil.getScreenshot();
         Thread.sleep(10000);
-        BufferedImage img2 = ImageIO.read(DriverRepository.getScreenshotFile());
+        BufferedImage img2 = ImageUtil.getScreenshot();
         Assert.assertTrue(ImageUtil.getDifference(img1, img2) > 10);
 
     }

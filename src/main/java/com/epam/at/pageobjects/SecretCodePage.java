@@ -7,9 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-/**
- * Created by Oleg_Shchur on 11/18/2017.
- */
 public class SecretCodePage {
 
     @FindBy(id = "secret")
@@ -18,11 +15,11 @@ public class SecretCodePage {
     @FindBy(id = "secretBrn")
     private WebElement buttonSectetCode;
 
-    public Input getInputSecretCode(){
+    public Input getInputSecretCode() {
         return new Input(inputSecretCode);
     }
 
-    public Button getButtonSectetCode(){
+    public Button getButtonSectetCode() {
         return new Button(buttonSectetCode);
     }
 

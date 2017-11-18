@@ -7,9 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-/**
- * Created by Oleg_Shchur on 11/18/2017.
- */
 public class LoginPage {
     @FindBy(id = "email")
     private WebElement inputEmail;
@@ -20,15 +17,15 @@ public class LoginPage {
     @FindBy(id = "email_sign_in_button")
     private WebElement buttonLogin;
 
-    public Input getInputEmail(){
+    public Input getInputEmail() {
         return new Input(inputEmail);
     }
 
-    public Input getInputPassword(){
+    public Input getInputPassword() {
         return new Input(inputPassword);
     }
 
-    public Button getButtonLogin(){
+    public Button getButtonLogin() {
         return new Button(buttonLogin);
     }
 

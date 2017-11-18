@@ -7,10 +7,9 @@
 
     <test name="FullSuite">
         <classes>
-            <!--<class name="com.epam.at.tests.ImageTest"/>
             <class name="com.epam.at.tests.RegistrationTest"/>
-            <class name="com.epam.at.tests.TestLogin"/>-->
-            <class name="com.epam.at.tests.TestProductLike"/>
+            <class name="com.epam.at.tests.TestLogin"/>
+            <class name="com.epam.at.tests.TestProduct"/>
             <class name="com.epam.at.tests.TestVideo"/>
         </classes>
     </test>
